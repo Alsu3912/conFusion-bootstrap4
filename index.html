@@ -36,14 +36,13 @@
                                 class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
-                        <span class="fa fa-sign-in"></span> Login</a>
+                    <a id="login-button"><span class="fa fa-sign-in"></span> Login</a>
                 </span>
             </div>
         </div>
     </nav>
 
-    <div id="loginModal" class="modal fade" role="dialog">
+    <div id="login-modal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <!-- Modal content-->
             <div class="modal-content">
@@ -174,8 +173,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center ">
-                    <a type="button" class="btn btn-warning nav-link btn-block" data-toggle="modal"
-                        data-target="#reserve-modal">Reserve Table</a>
+                    <a id="reserve-button" type="button" class="btn btn-warning nav-link btn-block">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -371,6 +369,16 @@
                     $('#carousel-button').children('span').removeClass('fa-play');
                     $('#carousel-button').children('span').addClass('fa-pause');
                 };
+            });
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#reserve-button').click(function() {
+                $('#reserve-modal').modal({show: true});
+            });
+            $('#login-button').click(function() {
+                $('#login-modal').modal({show: true});
             });
         })
     </script>
